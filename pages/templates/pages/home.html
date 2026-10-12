@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kroma Marketplace - Home</title>
+  <!-- Arquivo de estilo desacoplado -->
+  <link rel="stylesheet" href="{% static 'pages/css/home.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+  <!-- CABEÇALHO: Regra 3-Zonas (Wordmark, Navegação, Ação) -->
+  <header class="marketplace-header">
+    <div class="header-container">
+      <a href="#" class="brand-wordmark">
+        <span class="brand-gem"></span>
+        KROMA
+      </a>
+      <nav class="header-nav">
+        <a href="#destaques" class="nav-link active">Destaques</a>
+        <a href="#produtos" class="nav-link">Catálogo</a>
+        <a href="#beneficios" class="nav-link">Benefícios</a>
+        <a href="#vendedores" class="nav-link">Vendedores</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-primary" id="btn-cart">
+          Carrinho (0)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER PROPORÇÃO 70-20-10 -->
+  <div class="palette-strip">
+    <div class="palette-strip-inner">
+      <span>Proporção Cromática: <strong>70% Preto</strong> &bull; <strong>20% Verde</strong> &bull; <strong>10% Branco</strong></span>
+      <div class="ratio-bar">
+        <div class="ratio-seg-70" title="70% Preto"></div>
+        <div class="ratio-seg-20" title="20% Verde"></div>
+        <div class="ratio-seg-10" title="10% Branco"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="destaques">
+    <div class="hero-card">
+      <div class="hero-content">
+        <div class="hero-kicker">Curadoria &bull; Marketplace Oficial</div>
+        <h1 class="hero-title">O ápice do design em <span>preto e verde</span></h1>
+        <p class="hero-desc">
+          Encontre periféricos, áudio e iluminação de alto nível fornecidos por estúdios independentes credenciados.
+        </p>
+        <div class="hero-buttons">
+          <a href="#produtos" class="btn-primary">Explorar Produtos</a>
+          <a href="#vendedores" class="btn-secondary">Torne-se Vendedor</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="{% static 'pages/img/hero_marketplace.jpg' %}"
+        alt="Setup gamer com PC, monitor e óculos de realidade virtual"
+        class="hero-img">
+        <div class="hero-scrim"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTROS & PESQUISA -->
+  <section class="controls-section">
+    <div class="controls-wrapper">
+      <div class="search-box">
+        <input type="text" placeholder="Buscar por produto, categoria ou loja..." class="search-input">
+      </div>
+      <div class="filter-tabs">
+        <button class="tab-btn active">Todos</button>
+        <button class="tab-btn">Áudio Profissional</button>
+        <button class="tab-btn">Periféricos Custom</button>
+        <button class="tab-btn">Wearables</button>
+        <button class="tab-btn">Iluminação & Setup</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE PRODUTOS -->
+  <main class="catalog-section" id="produtos">
+    <div class="section-head">
+      <h2 class="section-title">Coleção Selecionada</h2>
+      <span class="section-count">4 itens disponíveis</span>
+    </div>
+    <div class="products-grid">
+      <!-- Cards de Produto renderizados com classes CSS independentes -->
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="marketplace-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand-title"><span class="brand-gem"></span> KROMA</div>
+        <p class="footer-brand-desc">Marketplace com código HTML e CSS estritamente separados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

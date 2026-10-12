@@ -1,0 +1,618 @@
+/* ==========================================================
+   KROMA Marketplace — home.css
+   Paleta (proporção 70-20-10):
+   70% preto  -> fundos, cards, header, footer
+   20% verde  -> ações, destaques, preço, bloco de vendedores
+   10% branco -> textos, ícones e contornos
+   ========================================================== */
+
+:root {
+  --black: #000000;
+  --green: #1fd16b;
+  --green-soft: rgba(31, 209, 107, 0.45);
+  --white: #ffffff;
+  --white-muted: rgba(255, 255, 255, 0.68);
+  --line: rgba(255, 255, 255, 0.16);
+
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --container: 1180px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--black);
+  color: var(--white);
+}
+
+.bg-black { background: var(--black); }
+.text-white { color: var(--white); }
+
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* ---------- Botões ---------- */
+.btn-primary,
+.btn-secondary,
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--black);
+}
+.btn-primary:hover { background: var(--white); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.btn-secondary:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+}
+.btn-dark:hover { background: var(--white); color: var(--black); }
+
+.btn-small {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+/* ---------- Marca ---------- */
+.brand-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.brand-gem {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--green);
+  transform: rotate(45deg);
+}
+
+/* ---------- Cabeçalho ---------- */
+.marketplace-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--black);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white-muted);
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease;
+}
+.nav-link:hover { color: var(--white); }
+.nav-link.active {
+  color: var(--white);
+  border-bottom-color: var(--green);
+}
+
+/* ---------- Faixa de proporção ---------- */
+.palette-strip {
+  border-bottom: 1px solid var(--line);
+}
+
+.palette-strip-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--white-muted);
+}
+.palette-strip-inner strong { color: var(--white); }
+
+.ratio-bar {
+  display: flex;
+  width: 220px;
+  height: 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ratio-seg-70 { width: 70%; background: var(--black); }
+.ratio-seg-20 { width: 20%; background: var(--green); }
+.ratio-seg-10 { width: 10%; background: var(--white); }
+
+/* ---------- Hero ---------- */
+.hero-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  min-height: 420px;
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 48px;
+}
+
+.hero-kicker {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 14em;
+}
+.hero-title span { color: var(--green); }
+
+.hero-desc {
+  max-width: 46ch;
+  color: var(--white-muted);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Imagem do hero */
+.hero-media {
+  position: relative;
+  min-height: 320px;
+  border-left: 1px solid var(--line);
+  overflow: hidden;
+}
+
+/* A imagem preenche a coluna e é recortada, sem distorcer */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 50%; /* mantém o PC e o óculos VR em foco */
+  /* Opcional: deixa a foto mais coerente com a paleta preto/verde/branco */
+  /* filter: grayscale(1) contrast(1.1); */
+}
+
+/* Degradê preto que mistura a foto com o card (mantém o 70% preto) */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #000 0%,
+    rgba(0, 0, 0, 0.4) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+/* ---------- Filtros e busca ---------- */
+.controls-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.search-input::placeholder { color: var(--white-muted); }
+.search-input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.tab-btn:hover { border-color: var(--green); }
+.tab-btn.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--black);
+}
+
+/* ---------- Catálogo ---------- */
+.catalog-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px 24px 56px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.section-count {
+  font-size: 14px;
+  color: var(--white-muted);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--black);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.product-card:hover { border-color: var(--green); }
+
+.product-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.product-seller {
+  font-size: 14px;
+  color: var(--white-muted);
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Ilustrações dos produtos (CSS puro) */
+.product-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-media::before,
+.product-media::after {
+  content: "";
+  position: absolute;
+}
+
+/* Áudio: aro de headset */
+.product-media-audio::before {
+  inset: 0;
+  margin: auto;
+  width: 104px;
+  height: 104px;
+  border: 14px solid var(--white);
+  border-radius: 50%;
+}
+.product-media-audio::after {
+  inset: 0;
+  margin: auto;
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+/* Teclado: grade de teclas */
+.product-media-keyboard::before {
+  inset: 0;
+  margin: auto;
+  width: 66%;
+  height: 48%;
+  background-color: var(--white);
+  background-image:
+    linear-gradient(90deg, var(--black) 3px, transparent 3px),
+    linear-gradient(var(--black) 3px, transparent 3px);
+  background-size: 24px 24px;
+  border-radius: 6px;
+}
+.product-media-keyboard::after {
+  right: 22%;
+  bottom: 30%;
+  width: 21px;
+  height: 21px;
+  background: var(--green);
+}
+
+/* Wearable: pulseira com tela */
+.product-media-wearable::before {
+  inset: 0;
+  margin: auto;
+  width: 76px;
+  height: 100px;
+  border: 6px solid var(--white);
+  border-radius: 22px;
+}
+.product-media-wearable::after {
+  inset: 0;
+  margin: auto;
+  width: 28px;
+  height: 28px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+/* Iluminação: barra de luz */
+.product-media-light::before {
+  inset: 0;
+  margin: auto;
+  width: 68%;
+  height: 14px;
+  background: var(--white);
+  border-radius: 7px;
+}
+.product-media-light::after {
+  top: 50%;
+  left: 16%;
+  width: 34%;
+  height: 14px;
+  margin-top: -7px;
+  background: var(--green);
+  border-radius: 7px;
+}
+
+/* ---------- Benefícios ---------- */
+.benefits-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.benefit-item {
+  padding-top: 16px;
+  border-top: 2px solid var(--green);
+}
+
+.benefit-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.benefit-text {
+  max-width: 38ch;
+  color: var(--white-muted);
+}
+
+/* ---------- Vendedores ---------- */
+.sellers-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px 24px 72px;
+}
+
+.sellers-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 44px;
+  background: var(--green);
+  color: var(--black);
+  border-radius: var(--radius);
+}
+
+.sellers-title {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.sellers-desc {
+  max-width: 52ch;
+  font-weight: 600;
+}
+
+/* ---------- Rodapé ---------- */
+.marketplace-footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.footer-brand-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.footer-brand-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--white-muted);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+  .hero-media {
+    min-height: 260px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  }
+  .hero-content {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-nav {
+    display: none;
+  }
+  .sellers-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

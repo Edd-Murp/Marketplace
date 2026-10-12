@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kroma Marketplace - Sobre mim</title>
+  <!-- home.css traz a base compartilhada (cores, header, botões, rodapé); sobre.css traz só o layout desta página -->
+  <link rel="stylesheet" href="{% static 'pages/css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/aboutme.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+  <!-- CABEÇALHO -->
+  <header class="marketplace-header">
+    <div class="header-container">
+      <a href="/" class="brand-wordmark">
+        <span class="brand-gem"></span>
+        KROMA
+      </a>
+      <nav class="header-nav" aria-label="Principal">
+        <a href="/#destaques" class="nav-link">Destaques</a>
+        <a href="/#produtos" class="nav-link">Catálogo</a>
+        <a href="/#beneficios" class="nav-link">Benefícios</a>
+        <a href="/#vendedores" class="nav-link">Vendedores</a>
+        <a href="#" class="nav-link active">Sobre mim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-primary" id="btn-cart" type="button">
+          Carrinho (0)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="about-page">
+
+    <!-- INTRODUÇÃO CENTRALIZADA -->
+    <section class="about-intro">
+      <p class="about-kicker">Um pouco sobre mim</p>
+      <h1 class="about-title">Quem sou eu?</h1>
+      <p class="about-text">
+        Sou designer e desenvolvedor web e crio interfaces simples, rápidas e bonitas para estúdios independentes.
+        Gosto de contraste forte, poucos elementos na tela e código organizado, com HTML e CSS separados.
+        Meu foco é fazer quem visita encontrar o que procura em poucos cliques, em qualquer tamanho de tela.
+      </p>
+    </section>
+
+    <!-- DESTAQUE + ÁREAS DE ATUAÇÃO -->
+    <section class="about-grid" aria-label="Perfil e áreas de atuação">
+
+      <!-- Cartão grande: mini perfil -->
+      <article class="about-feature">
+        <!-- Para usar foto: troque o conteúdo por <img src="{% static 'pages/images/perfil.jpg' %}" alt="Foto de Seu Nome"> -->
+        <div class="about-photo" role="img" aria-label="Avatar de Seu Nome">SN</div>
+        <p class="about-name">Seu Nome &bull; @seunome</p>
+        <p class="about-feature-text">Estou feliz em saber que mais de 300 projetos foram concluídos com sucesso!</p>
+        <a href="#" class="btn-dark">Saber mais</a>
+      </article>
+
+      <!-- Cartão 1 -->
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M10 38l2-9L31 10l7 7-19 19z"/>
+            <path class="icon-accent" d="M27 14l7 7"/>
+            <path class="icon-accent" d="M10 38l5-1"/>
+          </svg>
+        </div>
+        <h2 class="service-title">Design gráfico</h2>
+        <a href="#" class="service-link">Ver mais</a>
+      </article>
+
+      <!-- Cartão 2 -->
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="9" width="36" height="30" rx="3"/>
+            <path d="M6 18h36"/>
+            <path class="icon-accent" d="M12 13.5h.01M17 13.5h.01M22 13.5h.01"/>
+            <path d="M17 25v6a3 3 0 0 0 6 0v-6"/>
+            <path class="icon-accent" d="M29 25v8"/>
+          </svg>
+        </div>
+        <h2 class="service-title">Web design</h2>
+        <a href="#" class="service-link">Ver mais</a>
+      </article>
+
+      <!-- Cartão 3 -->
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="8" width="36" height="32" rx="3"/>
+            <path d="M19 21l-6 6 6 6"/>
+            <path d="M29 21l6 6-6 6"/>
+            <path class="icon-accent" d="M26 19l-4 16"/>
+          </svg>
+        </div>
+        <h2 class="service-title">Programas</h2>
+        <a href="#" class="service-link">Ver mais</a>
+      </article>
+
+      <!-- Cartão 4 -->
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="8" y="8" width="32" height="32" rx="6"/>
+            <rect x="15" y="15" width="8" height="8" rx="2"/>
+            <rect x="25" y="15" width="8" height="8" rx="2"/>
+            <rect x="15" y="25" width="8" height="8" rx="2"/>
+            <rect class="icon-accent" x="25" y="25" width="8" height="8" rx="2"/>
+          </svg>
+        </div>
+        <h2 class="service-title">Aplicativos</h2>
+        <a href="#" class="service-link">Ver mais</a>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="marketplace-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand-title"><span class="brand-gem"></span> KROMA</div>
+        <p class="footer-brand-desc">Marketplace com código HTML e CSS estritamente separados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

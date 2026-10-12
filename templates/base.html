@@ -1,0 +1,12 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <title>{% block titulo %}Meu site{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+  <nav>Menu</nav>
+  {% block conteudo %}{% endblock %}
+</body>
+</html>
